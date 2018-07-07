@@ -1,0 +1,19 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.cover {
+    max-width: 450px;
+}
+
+.page-footer {
+    background-color: #20211f;
+    font-size: 0.8rem;
+    color: gray;
+    padding: 1.5rem;
+}
