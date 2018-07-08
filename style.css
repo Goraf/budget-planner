@@ -16,4 +16,9 @@ body {
     font-size: 0.8rem;
     color: gray;
     padding: 1.5rem;
+    text-align: center;
+}
+
+.register-form {
+    max-width: 380px;
 }
