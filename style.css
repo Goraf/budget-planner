@@ -17,3 +17,7 @@ body {
     color: gray;
     padding: 1.5rem;
 }
+
+.register-form {
+    max-width: 380px;
+}
