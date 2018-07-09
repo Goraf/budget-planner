@@ -14,24 +14,24 @@
         <form class="add-expense-form p-3 m-auto border rounded">
           <h1 class="h3 mb-3 text-center">Dodaj wydatek</h1>
           <div class="form-group row">
-            <label for="income-amount" class="col-sm-3 col-form-label">Kwota</label>
+            <label for="expense-amount" class="col-sm-3 col-form-label">Kwota</label>
             <div class="col-sm-5 input-group mb-2">
-              <input type="number" class="form-control" name="income-amount" id="income-amount" placeholder="0.00" min="0" step="0.01" required>
+              <input type="number" class="form-control" name="expense-amount" id="expense-amount" placeholder="0.00" min="0" step="0.01" required>
               <div class="input-group-append">
                 <div class="input-group-text">zł</div>
               </div>
             </div>
           </div>
           <div class="form-group row">
-            <label for="income-date" class="col-sm-3 col-form-label">Data</label>
+            <label for="expense-date" class="col-sm-3 col-form-label">Data</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" name="income-date" id="income-date" required>
+              <input type="date" class="form-control" name="expense-date" id="expense-date" required>
             </div>
           </div>
           <div class="form-group row">
-              <label for="income-payment-method" class="col-sm-3 col-form-label">Sposób płatności</label>
+              <label for="expense-payment-method" class="col-sm-3 col-form-label">Sposób płatności</label>
               <div class="col">
-                <select name="income-payment-method" class="form-control" id="income-payment-method" required>
+                <select name="expense-payment-method" class="form-control" id="expense-payment-method" required>
                   <option value="" selected>Gotówka</option>
                   <option value="">Karta debetowa</option>
                   <option value="">Karta kredytowa</option>
@@ -39,9 +39,9 @@
               </div>
           </div>
           <div class="form-group row">
-              <label for="income-category" class="col-sm-3 col-form-label">Kategoria</label>
+              <label for="expense-category" class="col-sm-3 col-form-label">Kategoria</label>
               <div class="col">
-                <select name="income-category" class="form-control" id="income-category" required>
+                <select name="expense-category" class="form-control" id="expense-category" required>
                   <option value="" selected>Jedzenie</option>
                   <option value="">Mieszkanie</option>
                   <option value="">Rozrywka</option>
@@ -50,9 +50,9 @@
               </div>
           </div>
           <div class="form-group row">
-            <label for="income-comment" class="col-sm-3 col-form-label">Komentarz</label>
+            <label for="expense-comment" class="col-sm-3 col-form-label">Komentarz</label>
             <div class="col">
-              <input type="text" class="form-control" name="income-comment" id="income-comment">
+              <input type="text" class="form-control" name="expense-comment" id="expense-comment">
             </div>
           </div>
           <div class="row">
