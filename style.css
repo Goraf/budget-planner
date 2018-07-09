@@ -24,7 +24,8 @@ body {
     max-width: 380px;
 }
 
-.add-income-form {
+.add-income-form,
+.add-expense-form {
     width: 100%;
     max-width: 500px;
 }
