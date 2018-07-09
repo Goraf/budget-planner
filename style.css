@@ -23,3 +23,8 @@ body {
 .login-form {
     max-width: 380px;
 }
+
+.add-income-form {
+    width: 100%;
+    max-width: 500px;
+}
