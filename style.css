@@ -29,3 +29,17 @@ body {
     width: 100%;
     max-width: 500px;
 }
+
+.budget-menu {
+    width: 100%;
+    max-width: 700px;
+}
+
+.budget-menu_btn {
+    display: block;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    padding: 0;
+    margin-top: 1rem;
+}
