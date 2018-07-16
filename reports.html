@@ -13,6 +13,30 @@
     <div class="d-flex w-100 h-100 flex-column">
       <main class="py-4 px-3 m-auto">
         <h1 class="display-4 mb-4 text-center">Budget<wbr>Planner</h1>
+        <form class="form-inline mb-2">
+          <div class="form-row mr-2 mb-sm-3">
+            <div class="form-group col-auto">
+              <label for="reportPeriod" class="mr-2">Wyświetl okres</label>
+              <select class="form-control" id="reportPeriod">
+                <option value="currentMonth" selected>Bieżący miesiąc</option>
+                <option value="previousMonth">Poprzedni miesiąc</option>
+                <option value="currentYear">Bieżący rok</option>
+                <option value="previousYear">Poprzedni rok</option>
+                <option value="custom">Zakres dat</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row mb-sm-3">
+            <div class="form-group col-auto">
+              <label for="reportFromDate" class="mr-2">od</label>
+              <input type="date" class="form-control form-control-sm" id="reportFromDate" readonly>
+            </div>
+            <div class="form-group col-auto">
+              <label for="reportToDate" class="mr-2">do</label>
+              <input type="date" class="form-control form-control-sm" id="reportToDate" readonly>
+            </div>
+          </div>
+        </form>
       </main>
       <footer class="page-footer">© 2018</footer>
     </div>
