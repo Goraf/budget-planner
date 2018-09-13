@@ -7,5 +7,8 @@
         "psr-4": {
             "BudgetPlanner\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
     }
 }
