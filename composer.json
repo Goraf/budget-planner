@@ -2,7 +2,9 @@
     "name": "goraf/budget-planner",
     "description": "An example of budgeting app bootstrapped without a framework using modern PHP.",
     "type": "project",
-    "require": {},
+    "require": {
+        "zendframework/zend-diactoros": "^1.8"
+    },
     "autoload": {
         "psr-4": {
             "BudgetPlanner\\": "src/"
