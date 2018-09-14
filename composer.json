@@ -6,7 +6,8 @@
         "zendframework/zend-diactoros": "^1.8",
         "middlewares/fast-route": "^1.1",
         "relay/relay": "2.x@dev",
-        "middlewares/request-handler": "^1.3"
+        "middlewares/request-handler": "^1.3",
+        "php-di/php-di": "^6.0"
     },
     "autoload": {
         "psr-4": {
