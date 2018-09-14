@@ -3,7 +3,8 @@
     "description": "An example of budgeting app bootstrapped without a framework using modern PHP.",
     "type": "project",
     "require": {
-        "zendframework/zend-diactoros": "^1.8"
+        "zendframework/zend-diactoros": "^1.8",
+        "middlewares/fast-route": "^1.1"
     },
     "autoload": {
         "psr-4": {
