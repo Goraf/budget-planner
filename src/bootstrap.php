@@ -13,6 +13,10 @@ use function FastRoute\simpleDispatcher;
 $container = require_once 'dependencies.php';
 
 $dispatcher = simpleDispatcher(function (RouteCollector $r) {
+    $routes = include 'routes.php';
+    foreach ($routes as $route) {
+        $r->addRoute(...$route);
+    }
 });
 
 $middlewareQueue[] = new FastRoute($dispatcher);
