@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 use BudgetPlanner\HomePageController;
 use DI\ContainerBuilder;
+use FastRoute\RouteCollector;
+use Middlewares\FastRoute;
+use Middlewares\RequestHandler;
 use Relay\Relay;
 use Zend\Diactoros\ServerRequestFactory;
 use function DI\create;
+use function FastRoute\simpleDispatcher;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -19,10 +23,12 @@ $containerBuilder->addDefinitions([
 
 $container = $containerBuilder->build();
 
-$middlewareQueue = [];
+$dispatcher = simpleDispatcher(function (RouteCollector $r) {
+
+});
+
+$middlewareQueue[] = new FastRoute($dispatcher);
+$middlewareQueue[] = new RequestHandler($container);
 
 $requestHandler = new Relay($middlewareQueue);
 $requestHandler->handle(ServerRequestFactory::fromGlobals());
-
-$homePage = $container->get(HomePageController::class);
-$homePage->show();
