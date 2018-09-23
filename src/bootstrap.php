@@ -12,6 +12,12 @@ use function FastRoute\simpleDispatcher;
 
 define('ROOT_DIR', dirname(__DIR__));
 
+$dotenv = new Dotenv\Dotenv(ROOT_DIR);
+// Don't load environment variables from file in production
+if (!isset($_SERVER['APP_ENV'])) {
+    $dotenv->load();
+}
+
 $container = require_once 'dependencies.php';
 
 $dispatcher = simpleDispatcher(function (RouteCollector $r) {
