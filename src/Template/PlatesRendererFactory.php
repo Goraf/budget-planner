@@ -11,7 +11,7 @@ final class PlatesRendererFactory
 {
     public function __invoke(): PlatesRenderer
     {
-        $engine = new PlatesEngine(__DIR__.'/../../resources/views');
+        $engine = new PlatesEngine(ROOT_DIR.'/resources/views');
 
         $engine->setFileExtension(null);
 

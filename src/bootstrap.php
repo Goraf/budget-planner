@@ -10,6 +10,8 @@ use Zend\Diactoros\Response\SapiEmitter;
 use Zend\Diactoros\ServerRequestFactory;
 use function FastRoute\simpleDispatcher;
 
+define('ROOT_DIR', dirname(__DIR__));
+
 $container = require_once 'dependencies.php';
 
 $dispatcher = simpleDispatcher(function (RouteCollector $r) {
