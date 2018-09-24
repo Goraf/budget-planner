@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use FastRoute\RouteCollector;
+use Illuminate\Database\Capsule\Manager as Capsule;
 use Middlewares\FastRoute;
 use Middlewares\RequestHandler;
 use Relay\Relay;
@@ -19,6 +20,21 @@ if (!isset($_SERVER['APP_ENV'])) {
 }
 
 $container = require_once 'dependencies.php';
+
+$dbConnectionManager = new Capsule();
+$dbConnectionManager->addConnection([
+    'driver' => env('DB_DRIVER'),
+    'host' => env('DB_HOST'),
+    'port' => env('DB_PORT', ''),
+    'database' => env('DB_DATABASE'),
+    'username' => env('DB_USERNAME'),
+    'password' => env('DB_PASSWORD'),
+    'charset' => env('DB_CHARSET'),
+    'collation' => env('DB_COLLATION'),
+    'prefix' => env('DB_PREFIX', ''),
+]);
+$dbConnectionManager->setAsGlobal();
+$dbConnectionManager->bootEloquent();
 
 $dispatcher = simpleDispatcher(function (RouteCollector $r) {
     $routes = include 'routes.php';
