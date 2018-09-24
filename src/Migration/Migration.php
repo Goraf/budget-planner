@@ -15,6 +15,7 @@ class Migration extends AbstractMigration
     protected $scheme;
 
     public function init() {
+        // Setup connection
         $this->capsule = new Capsule;
         $this->capsule->addConnection([
             'driver' => env('DB_DRIVER'),
