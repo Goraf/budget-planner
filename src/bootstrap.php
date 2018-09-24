@@ -19,6 +19,7 @@ if (!isset($_SERVER['APP_ENV'])) {
     $dotenv->load();
 }
 
+/** @var DI\Container $container */
 $container = require_once 'dependencies.php';
 
 $dbConnectionManager = new Capsule();
