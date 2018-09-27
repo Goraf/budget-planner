@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace BudgetPlanner;
 
-use Psr\Http\Message\ResponseInterface;
+use BudgetPlanner\Controller;
 use BudgetPlanner\Template\TemplateRendererInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
-final class HomePageController
+final class HomePageController extends Controller
 {
     /** @var ResponseInterface */
     private $response;
@@ -21,7 +23,7 @@ final class HomePageController
         $this->templateRenderer = $renderer;
     }
 
-    public function __invoke(): ResponseInterface
+    public function indexAction(ServerRequestInterface $request): ResponseInterface
     {
         $content = $this->templateRenderer->render('index.html');
         $response = $this->response->withHeader('Content-Type', 'text/html');
