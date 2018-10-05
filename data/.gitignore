@@ -1,4 +1,7 @@
 *
 !cache
 !cache/.gitkeep
+!db/
+!db/migrations/
+!db/migrations/*.php
 !.gitignore

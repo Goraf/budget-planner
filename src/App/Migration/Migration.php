@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BudgetPlanner\Migration;
+namespace App\Migration;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Phinx\Migration\AbstractMigration;

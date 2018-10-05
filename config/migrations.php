@@ -10,9 +10,9 @@ if (!isset($_SERVER['APP_ENV'])) {
 
 return [
     "paths" => [
-        "migrations" => __DIR__ . "/../db/migrations"
+        "migrations" => __DIR__ . "/../data/db/migrations"
     ],
-    "migration_base_class" => "BudgetPlanner\Migration\Migration",
+    "migration_base_class" => "App\Migration\Migration",
     "environments" => [
         "default_migration_table" => "phinxlog",
         "default_database" => "budget_planner_dev",
