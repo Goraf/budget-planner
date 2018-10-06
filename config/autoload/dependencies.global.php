@@ -11,6 +11,7 @@ return [
         // key is the alias name, the value is the service to which it points.
         'aliases' => [
             // Fully\Qualified\ClassOrInterfaceName::class => Fully\Qualified\ClassName::class,
+            Zend\Expressive\Authentication\AuthenticationInterface::class => Zend\Expressive\Authentication\Session\PhpSession::class,
             Zend\Expressive\Authentication\UserRepositoryInterface::class => App\Domain\User\UserServiceInterface::class,
         ],
         // Use 'invokables' for constructor-less services, or services that do
@@ -25,5 +26,9 @@ return [
             // Fully\Qualified\ClassName::class => Fully\Qualified\FactoryName::class,
             App\Domain\User\UserServiceInterface::class => App\Domain\User\UserServiceFactory::class,
         ],
+    ],
+
+    'authentication' => [
+        'redirect' => '/login',
     ],
 ];

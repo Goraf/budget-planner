@@ -34,5 +34,5 @@ use Zend\Expressive\MiddlewareFactory;
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
     $app->get('/', App\HomePage\HomePageHandler::class, 'home');
-    $app->get('/login', App\Login\LoginHandler::class, 'login');
+    $app->route('/login', App\Login\LoginHandler::class, ['GET', 'POST'], 'login');
 };
