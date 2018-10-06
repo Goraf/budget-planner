@@ -11,6 +11,7 @@ return [
         // key is the alias name, the value is the service to which it points.
         'aliases' => [
             // Fully\Qualified\ClassOrInterfaceName::class => Fully\Qualified\ClassName::class,
+            Zend\Expressive\Authentication\UserRepositoryInterface::class => App\Domain\User\UserServiceInterface::class,
         ],
         // Use 'invokables' for constructor-less services, or services that do
         // not require arguments to the constructor. Map a service name to the
@@ -22,6 +23,7 @@ return [
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories'  => [
             // Fully\Qualified\ClassName::class => Fully\Qualified\FactoryName::class,
+            App\Domain\User\UserServiceInterface::class => App\Domain\User\UserServiceFactory::class,
         ],
     ],
 ];
