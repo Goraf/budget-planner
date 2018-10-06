@@ -14,11 +14,9 @@ class Init extends Migration
 
             $table->string('user_name', 30);
 
-            $table->string('email_adress', 40)->unique();
+            $table->string('email_address', 40)->unique();
 
-            $table->string('password_salt', 60);
-
-            $table->string('password_hash', 60);
+            $table->string('password_hash', 255);
         });
     }
 
