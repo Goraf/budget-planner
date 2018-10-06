@@ -1,14 +1,19 @@
 <?php $this->layout('layout::default', ['title' => 'Zaloguj się do konta | BudgetPlanner']) ?>
 
-<form class="login-form p-3 m-auto border rounded">
-  <h1 class="h3 mb-3 text-center">Zaloguj się do konta</h1>
-  <div class="form-group">
-    <label for="email">Adres email</label>
-    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-  </div>
-  <div class="form-group">
-    <label for="password">Hasło</label>
-    <input type="password" name="password" id="password" class="form-control" placeholder="Hasło" required>
-  </div>
-  <button type="submit" class="btn btn-primary btn-block">Zaloguj się</button>
+<form class="login-form p-3 m-auto border rounded" action="/login" method="post">
+    <h1 class="h3 mb-3 text-center">Zaloguj się do konta</h1>
+    <?php if (isset($error)) : ?>
+        <div class="alert alert-danger text-center" role="alert">
+            <?= $this->escapeHtml($error) ?>
+        </div>
+    <?php endif ?>
+    <div class="form-group">
+        <label for="email">Adres email</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Hasło</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Hasło" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Zaloguj się</button>
 </form>
