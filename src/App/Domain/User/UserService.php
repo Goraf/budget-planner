@@ -34,6 +34,23 @@ final class UserService implements UserServiceInterface
         string $credential,
         string $password = null
     ): ?UserInterface {
+        $user = $this->repository->getUserByEmail($credential);
+
+        if (! $user) {
+            return null;
+        }
+
+        if (password_verify($password, $user->password_hash)) {
+            return ($this->userFactory)(
+                strval($user->id),
+                [],
+                [
+                    'name' => $user->user_name,
+                    'email' => $user->email_address
+                ]
+            );
+        }
+
         return null;
     }
 }
