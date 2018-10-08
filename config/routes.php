@@ -50,4 +50,12 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         ['GET', 'POST'],
         'login'
     );
+    $app->get(
+        '/logout',
+        [
+            Zend\Expressive\Session\SessionMiddleware::class,
+            App\Domain\User\Handler\LogoutHandler::class,
+        ],
+        'logout'
+    );
 };
