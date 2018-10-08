@@ -33,11 +33,8 @@ class ConfigProvider
     {
         return [
             'invokables' => [
-                // Handler\PingHandler::class => Handler\PingHandler::class,
             ],
             'factories'  => [
-                HomePage\HomePageHandler::class => HomePage\HomePageHandlerFactory::class,
-                Login\LoginHandler::class => Login\LoginHandlerFactory::class,
             ],
         ];
     }

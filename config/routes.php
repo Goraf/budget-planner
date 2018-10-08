@@ -33,6 +33,21 @@ use Zend\Expressive\MiddlewareFactory;
  * );
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
-    $app->get('/', App\HomePage\HomePageHandler::class, 'home');
-    $app->route('/login', App\Login\LoginHandler::class, ['GET', 'POST'], 'login');
+    $app->get(
+        '/',
+        [
+            Zend\Expressive\Session\SessionMiddleware::class,
+            App\Domain\HomePage\Handler\HomePageHandler::class,
+        ],
+        'home'
+    );
+    $app->route(
+        '/login',
+        [
+            Zend\Expressive\Session\SessionMiddleware::class,
+            App\Domain\User\Handler\LoginHandler::class,
+        ],
+        ['GET', 'POST'],
+        'login'
+    );
 };

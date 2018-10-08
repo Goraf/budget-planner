@@ -25,6 +25,8 @@ return [
         'factories'  => [
             // Fully\Qualified\ClassName::class => Fully\Qualified\FactoryName::class,
             App\Domain\User\AuthenticateUserServiceInterface::class => App\Domain\User\AuthenticateUserServiceFactory::class,
+            App\Domain\HomePage\Handler\HomePageHandler::class => App\Domain\HomePage\Handler\HomePageHandlerFactory::class,
+            App\Domain\User\Handler\LoginHandler::class => App\Domain\User\Handler\LoginHandlerFactory::class,
         ],
     ],
 
