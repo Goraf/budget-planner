@@ -10,6 +10,9 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Diactoros\Response\RedirectResponse;
 use Zend\Expressive\Authentication\AuthenticationInterface;
+use Zend\Expressive\Authentication\UserInterface;
+use Zend\Expressive\Session\Exception\MissingSessionContainerException;
+use Zend\Expressive\Session\SessionMiddleware;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
 final class LoginHandler implements RequestHandlerInterface
@@ -30,6 +33,17 @@ final class LoginHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
+        /** @var \Zend\Expressive\Session\Session $session */
+        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
+        if (! $session) {
+            throw MissingSessionContainerException::create();
+        }
+
+        // Already logged in
+        if ($session->has(UserInterface::class)) {
+            return new RedirectResponse('/budget');
+        }
+
         // Handle submitted credentials
         if ('POST' === $request->getMethod()) {
             return $this->handleLoginAttempt($request);
@@ -43,7 +57,7 @@ final class LoginHandler implements RequestHandlerInterface
     {
         // Login was successful
         if ($this->service->authenticate($request)) {
-            return new RedirectResponse('/');
+            return new RedirectResponse('/budget');
         }
 
         // Login failed
