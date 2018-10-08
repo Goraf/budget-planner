@@ -51,6 +51,15 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         'login'
     );
     $app->get(
+        '/budget',
+        [
+            Zend\Expressive\Session\SessionMiddleware::class,
+            Zend\Expressive\Authentication\AuthenticationMiddleware::class,
+            App\Domain\Budget\Handler\BudgetMenuPageHandler::class,
+        ],
+        'budget'
+    );
+    $app->get(
         '/logout',
         [
             Zend\Expressive\Session\SessionMiddleware::class,
