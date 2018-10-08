@@ -6,6 +6,6 @@ namespace App\Domain\User;
 
 use Zend\Expressive\Authentication\UserRepositoryInterface as AuthenticateServiceInterface;
 
-interface UserServiceInterface extends AuthenticateServiceInterface
+interface AuthenticateUserServiceInterface extends AuthenticateServiceInterface
 {
 }

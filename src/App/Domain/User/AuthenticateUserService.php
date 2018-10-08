@@ -6,7 +6,7 @@ namespace App\Domain\User;
 
 use Zend\Expressive\Authentication\UserInterface;
 
-final class UserService implements UserServiceInterface
+final class AuthenticateUserService implements AuthenticateUserServiceInterface
 {
     /** @var UserRepositoryInterface $repository */
     private $repository;
