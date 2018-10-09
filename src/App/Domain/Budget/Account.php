@@ -16,4 +16,9 @@ final class Account extends Model
     {
         $this->belongsToMany(\App\Domain\User\User::class, 'user_accounts');
     }
+
+    public function expenses()
+    {
+        $this->hasMany(Expense::class);
+    }
 }
