@@ -59,6 +59,16 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         ],
         'budget'
     );
+    $app->route(
+        '/budget/add/income',
+        [
+            Zend\Expressive\Session\SessionMiddleware::class,
+            Zend\Expressive\Authentication\AuthenticationMiddleware::class,
+            App\Domain\Budget\Handler\AddIncomeHandler::class,
+        ],
+        ['GET'],
+        'add-income'
+    );
     $app->get(
         '/logout',
         [
