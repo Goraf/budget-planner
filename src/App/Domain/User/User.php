@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 final class User extends Model
 {
+    protected $table = 'users';
+
     public $timestamps = false;
+
+    public function accounts()
+    {
+        $this->belongsToMany(\App\Domain\Budget\Account::class, 'user_accounts');
+    }
 }
