@@ -36,4 +36,9 @@ final class Account extends Model
     {
         $this->hasMany(Income::class);
     }
+
+    public function incomeCategories()
+    {
+        $this->hasMany(IncomeCategory::class);
+    }
 }
