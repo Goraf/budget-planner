@@ -26,4 +26,9 @@ final class Account extends Model
     {
         $this->hasMany(ExpenseCategory::class);
     }
+
+    public function paymentMethods()
+    {
+        $this->hasMany(PaymentMethod::class);
+    }
 }

@@ -21,4 +21,9 @@ final class Expense extends Model
     {
         $this->belongsTo(ExpenseCategory::class);
     }
+
+    public function paymentMethod()
+    {
+        $this->belongsTo(PaymentMethod::class);
+    }
 }
