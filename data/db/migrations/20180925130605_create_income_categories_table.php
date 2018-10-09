@@ -12,12 +12,19 @@ class CreateIncomeCategoriesTable extends Migration
         $this->scheme->create('income_categories', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
 
+            $table->unsignedInteger('account_id');
+            $table->foreign('account_id', 'income_categories__account_id__fk')
+                ->references('id')->on('accounts');
+
             $table->string('income_category_name', 60);
         });
     }
 
     public function down()
     {
+        $this->scheme->table('income_categories', function (Blueprint $table) {
+            $table->dropForeign('income_categories__account_id__fk');
+        });
         $this->scheme->drop('income_categories');
     }
 }
