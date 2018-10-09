@@ -6,9 +6,9 @@ namespace App\Domain\Budget;
 
 use Illuminate\Database\Eloquent\Model;
 
-final class Expense extends Model
+final class ExpenseCategory extends Model
 {
-    protected $table = 'expenses';
+    protected $table = 'expense_categories';
 
     public $timestamps = false;
 
@@ -17,8 +17,8 @@ final class Expense extends Model
         $this->belongsTo(Account::class);
     }
 
-    public function category()
+    public function expenses()
     {
-        $this->belongsTo(ExpenseCategory::class);
+        $this->hasMany(Expense::class);
     }
 }
