@@ -26,6 +26,7 @@ return [
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories'  => [
             // Fully\Qualified\ClassName::class => Fully\Qualified\FactoryName::class,
+            App\Domain\Budget\BudgetServiceInterface::class => App\Domain\Budget\BudgetServiceFactory::class,
             App\Domain\Budget\Handler\BudgetMenuPageHandler::class => App\Domain\Budget\Handler\BudgetMenuPageHandlerFactory::class,
             App\Domain\Budget\Handler\AddIncomeHandler::class => App\Domain\Budget\Handler\AddIncomeHandlerFactory::class,
             App\Domain\HomePage\Handler\HomePageHandler::class => App\Domain\HomePage\Handler\HomePageHandlerFactory::class,
