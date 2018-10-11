@@ -14,6 +14,6 @@ final class User extends Model
 
     public function accounts()
     {
-        $this->belongsToMany(\App\Domain\Budget\Account::class, 'user_accounts');
+        return $this->belongsToMany(\App\Domain\Budget\Account::class, 'user_accounts');
     }
 }

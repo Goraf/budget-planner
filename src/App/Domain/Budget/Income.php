@@ -14,11 +14,11 @@ final class Income extends Model
 
     public function account()
     {
-        $this->belongsTo(Account::class);
+        return $this->belongsTo(Account::class);
     }
 
     public function category()
     {
-        $this->belongsTo(IncomeCategory::class);
+        return $this->belongsTo(IncomeCategory::class);
     }
 }

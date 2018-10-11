@@ -14,31 +14,31 @@ final class Account extends Model
 
     public function users()
     {
-        $this->belongsToMany(\App\Domain\User\User::class, 'user_accounts');
+        return $this->belongsToMany(\App\Domain\User\User::class, 'user_accounts');
     }
 
     public function expenses()
     {
-        $this->hasMany(Expense::class);
+        return $this->hasMany(Expense::class);
     }
 
     public function expenseCategories()
     {
-        $this->hasMany(ExpenseCategory::class);
+        return $this->hasMany(ExpenseCategory::class);
     }
 
     public function paymentMethods()
     {
-        $this->hasMany(PaymentMethod::class);
+        return $this->hasMany(PaymentMethod::class);
     }
 
     public function incomes()
     {
-        $this->hasMany(Income::class);
+        return $this->hasMany(Income::class);
     }
 
     public function incomeCategories()
     {
-        $this->hasMany(IncomeCategory::class);
+        return $this->hasMany(IncomeCategory::class);
     }
 }

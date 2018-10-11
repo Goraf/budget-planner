@@ -14,16 +14,16 @@ final class Expense extends Model
 
     public function account()
     {
-        $this->belongsTo(Account::class);
+        return $this->belongsTo(Account::class);
     }
 
     public function category()
     {
-        $this->belongsTo(ExpenseCategory::class);
+        return $this->belongsTo(ExpenseCategory::class);
     }
 
     public function paymentMethod()
     {
-        $this->belongsTo(PaymentMethod::class);
+        return $this->belongsTo(PaymentMethod::class);
     }
 }
