@@ -1,11 +1,11 @@
 <?php $this->layout('layout::default', ['title' => 'BudgetPlanner']) ?>
 
-<form class="add-income-form p-3 m-auto border rounded">
+<form class="add-income-form p-3 m-auto border rounded" action="/budget/add/income" method="post">
   <h1 class="h3 mb-3 text-center">Dodaj przychód</h1>
   <div class="form-group row">
     <label for="income-amount" class="col-sm-3 col-form-label">Kwota</label>
     <div class="col-sm-5 input-group mb-2">
-      <input type="number" class="form-control" name="income-amount" id="income-amount" placeholder="0.00" min="0" step="0.01" required>
+      <input type="number" class="form-control" name="amount" id="income-amount" placeholder="0.00" min="0" step="0.01" required>
       <div class="input-group-append">
         <div class="input-group-text">zł</div>
       </div>
@@ -14,30 +14,30 @@
   <div class="form-group row">
     <label for="income-date" class="col-sm-3 col-form-label">Data</label>
     <div class="col-sm-5">
-      <input type="date" class="form-control" name="income-date" id="income-date" required>
+      <input type="date" class="form-control" name="date" id="income-date" required>
     </div>
   </div>
   <div class="form-group row">
       <label for="income-category" class="col-sm-3 col-form-label">Kategoria</label>
       <div class="col">
-        <select name="income-category" class="form-control" id="income-category" required>
-          <option value="" selected>Wynagrodzenie</option>
-          <option value="">Odsetki bankowe</option>
-          <option value="">Sprzedaż</option>
-          <option value="">Inne</option>
+        <select name="category" class="form-control" id="income-category" required>
+          <option selected>Wynagrodzenie</option>
+          <option>Odsetki bankowe</option>
+          <option>Sprzedaż</option>
+          <option>Inne</option>
         </select>
       </div>
   </div>
   <div class="form-group row">
     <label for="income-comment" class="col-sm-3 col-form-label">Komentarz</label>
     <div class="col">
-      <input type="text" class="form-control" name="income-comment" id="income-comment">
+      <input type="text" class="form-control" name="comment" id="income-comment">
     </div>
   </div>
   <div class="row">
     <div class="col-auto mx-auto">
       <button type="submit" class="btn btn-success">Dodaj</button>
-      <button type="reset" class="btn btn-outline-danger">Anuluj</button>
+      <button type="reset" class="btn btn-outline-danger">Wyczyść</button>
     </div>
   </div>
 </form>
