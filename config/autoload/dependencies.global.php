@@ -19,8 +19,9 @@ return [
         // class name.
         'invokables' => [
             // Fully\Qualified\InterfaceName::class => Fully\Qualified\ClassName::class,
-            App\Domain\User\UserRepositoryInterface::class => App\Domain\User\EloquentUserRepository::class,
             App\Domain\Budget\AccountRepositoryInterface::class => App\Domain\Budget\EloquentAccountRepository::class,
+            App\Domain\Budget\IncomeRepositoryInterface::class => App\Domain\Budget\EloquentIncomeRepository::class,
+            App\Domain\User\UserRepositoryInterface::class => App\Domain\User\EloquentUserRepository::class,
         ],
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories'  => [
