@@ -66,7 +66,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
             Zend\Expressive\Authentication\AuthenticationMiddleware::class,
             App\Domain\Budget\Handler\AddIncomeHandler::class,
         ],
-        ['GET'],
+        ['GET', 'POST'],
         'add-income'
     );
     $app->get(
